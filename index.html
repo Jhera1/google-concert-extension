@@ -4,20 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Concert finder App</title>
 </head>
 
 <body>
-  <button id="share">Share my location</button>
-  <div id="app"></div>
-  <pre id="result"></pre>
+
+
+
+  <div class="list-background-color">
+    <div class="list">
+      <ol id="concerts"></ol>
+    </div>
+  </div>
+  <!-- <div id="app"></div> -->
+  <!-- <pre id="result"></pre> -->
+
+  <button id="share">Show live music near me</button>
 
 
 
 
-  <script type="module" src="/main.js"></script>
-  <script src="./script.js"></script>
+  <script type="module" src="./script.js"></script>
 </body>
 
 </html>
