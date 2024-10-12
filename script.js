@@ -34,9 +34,22 @@ const getConcertData = async (cityName) => {
     const response = await fetch(url, options);
     const result = await response.json();
     const concertList = document.getElementById("concerts");
+    
+    //   added concertDiv 
+    const concertDiv = document.querySelector(".list");
+
+    
+    console.log(result);
     concertList.innerHTML = result.data
       .map((concert) => `<li>${concert.name} DATE: ${concert.endDate} </li> `)
       .join("");
+
+    // Only show the div if there is data in the ol
+    if (result.data.length > 0) {
+        concertDiv.style.display = "block"; // Show the div containing the ol
+      }
+
+    console.log(result.data[10]);
   } catch (error) {
     console.error(error);
   }
