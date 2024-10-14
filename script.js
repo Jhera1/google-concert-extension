@@ -1,5 +1,7 @@
 const http = new XMLHttpRequest();
-import { config } from "./config";
+import config from "./config.js";
+
+console.log("script loaded successfully ");
 
 const getDates = () => {
   const today = new Date();
@@ -55,6 +57,7 @@ const getConcertData = async (cityName) => {
 };
 
 document.querySelector("#share").addEventListener("click", () => {
+  console.log("button Clicked");
   findMyCoordinates();
 });
 function findMyCoordinates() {
