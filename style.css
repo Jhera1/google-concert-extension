@@ -11,12 +11,13 @@ body {
   background-position: center;
   justify-content: center;
   align-items: center;
+  width: 200vh;
 }
 
 button {
   background-color: rgb(50, 173, 132);
   width: fit-content;
-  font-family: 'circular';
+  font-family: "circular";
   font-size: 25px;
   border-radius: 15px;
   padding: 12px;
@@ -69,11 +70,3 @@ button:hover {
   position: relative;
   z-index: 2; /* Ensure the text is on top of the background */
 }
-
-
-
-
-
-
-
-

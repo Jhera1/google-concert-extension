@@ -1,5 +1,7 @@
 const http = new XMLHttpRequest();
-import { config } from "./config";
+import config from "./config.js";
+
+console.log("script loaded successfully ");
 
 const getDates = () => {
   const today = new Date();
@@ -34,11 +36,10 @@ const getConcertData = async (cityName) => {
     const response = await fetch(url, options);
     const result = await response.json();
     const concertList = document.getElementById("concerts");
-    
-    //   added concertDiv 
+
+    //   added concertDiv
     const concertDiv = document.querySelector(".list");
 
-    
     console.log(result);
     concertList.innerHTML = result.data
       .map((concert) => `<li>${concert.name} DATE: ${concert.endDate} </li> `)
@@ -46,8 +47,8 @@ const getConcertData = async (cityName) => {
 
     // Only show the div if there is data in the ol
     if (result.data.length > 0) {
-        concertDiv.style.display = "block"; // Show the div containing the ol
-      }
+      concertDiv.style.display = "block"; // Show the div containing the ol
+    }
 
     console.log(result.data[10]);
   } catch (error) {
@@ -56,6 +57,7 @@ const getConcertData = async (cityName) => {
 };
 
 document.querySelector("#share").addEventListener("click", () => {
+  console.log("button Clicked");
   findMyCoordinates();
 });
 function findMyCoordinates() {
