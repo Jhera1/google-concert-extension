@@ -40,9 +40,15 @@ const getConcertData = async (cityName) => {
     //   added concertDiv
     const concertDiv = document.querySelector(".list");
 
+    const artist = result.data.map((concert) => concert.name.split("@"));
+    console.log(artist);
+
     console.log(result);
     concertList.innerHTML = result.data
-      .map((concert) => `<li>${concert.name} DATE: ${concert.endDate} </li> `)
+      .map(
+        (concert, index) =>
+          `<div><li class='test-2'><strong class='test'>${artist[index][0]}</strong> @${artist[index][1]} DATE: ${concert.endDate}</li> </div> `
+      )
       .join("");
 
     // Only show the div if there is data in the ol
