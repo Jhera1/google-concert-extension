@@ -1,3 +1,4 @@
+/* Ensure the background image covers the screen uniformly */
 body {
   background-image: url(https://images.pexels.com/photos/5193531/pexels-photo-5193531.jpeg);
   color: white;
@@ -7,23 +8,27 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
-  height: 200vh;
+  min-height: 400px; /* Ensure the background covers the viewport height */
   background-position: center;
   justify-content: center;
   align-items: center;
-  width: 200vh;
+  min-width: 700px;
+  box-sizing: border-box;
 }
 
+/* Responsive button styling */
 button {
   background-color: rgb(50, 173, 132);
-  width: fit-content;
   font-family: "circular";
-  font-size: 25px;
+  font-size: 2.5vw; /* Use viewport width to adjust font size dynamically */
   border-radius: 15px;
   padding: 12px;
   opacity: 85%;
   align-self: center;
   margin-top: 10px;
+  cursor: pointer;
+  width: fit-content;
+  max-width: 80vw; /* Limit button width on smaller screens */
 }
 
 button:hover {
@@ -31,9 +36,10 @@ button:hover {
   opacity: 95%;
 }
 
+/* Make the list element responsive */
 .list {
   display: none;
-  position: relative; /* Make the parent element a containing block for the pseudo-element */
+  position: relative;
   border-radius: 20px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -42,7 +48,9 @@ button:hover {
   font-family: sans-serif;
   font-size: larger;
   font-weight: 600;
-  padding: 0 30px;
+  padding: 1rem 2rem; /* Adjust padding using rem for consistency */
+  max-width: 90vw; /* Ensure the list is not too wide on smaller screens */
+  box-sizing: border-box;
   overflow: hidden;
 }
 
@@ -53,12 +61,12 @@ button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/64ceca5e-14ff-41da-a880-1036ee17f850/dgctvw2-122a137a-6b50-4f57-b1c9-f19282dc02d5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY0Y2VjYTVlLTE0ZmYtNDFkYS1hODgwLTEwMzZlZTE3Zjg1MFwvZGdjdHZ3Mi0xMjJhMTM3YS02YjUwLTRmNTctYjFjOS1mMTkyODJkYzAyZDUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3lFwsOPLxwO_hNSn4oV4lGtC_-I-SlfqZgsW6mgrTOY);
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/64ceca5e-14ff-41da-a880-1036ee17f850/dgctvw2-122a137a-6b50-4f57-b1c9-f19282dc02d5.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 25%; /* Adjust the opacity of the background image */
-  z-index: 1; /* Place it behind the text */
+  opacity: 25%;
+  z-index: 1;
 }
 
 .list-background-color {
@@ -66,7 +74,21 @@ button:hover {
   border-radius: 20px;
 }
 
+/* Ensure text is above the background image */
 .list ol {
   position: relative;
-  z-index: 2; /* Ensure the text is on top of the background */
+  z-index: 2;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  button {
+    font-size: 4vw; /* Adjust button font size for smaller screens */
+    padding: 10px 15px; /* Reduce padding */
+  }
+
+  .list {
+    font-size: medium; /* Adjust list font size for smaller screens */
+    padding: 1rem;
+  }
 }
