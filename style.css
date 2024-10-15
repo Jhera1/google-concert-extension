@@ -76,6 +76,11 @@ button:hover {
   z-index: 2;
 }
 
+.artist-name {
+  color: rgb(224, 153, 165);
+  text-shadow: 2.5px 2.5px 0 rgb(0, 0, 0);
+}
+
 @media (max-width: 768px) {
   button {
     font-size: 4vw;

@@ -47,7 +47,7 @@ const getConcertData = async (cityName) => {
     concertList.innerHTML = result.data
       .map(
         (concert, index) =>
-          `<div><li class='test-2'><strong class='test'>${artist[index][0]}</strong> @${artist[index][1]} DATE: ${concert.endDate}</li> </div> `
+          `<div><li><strong class='artist-name'>${artist[index][0]}</strong> @${artist[index][1]} DATE: ${concert.endDate}</li> </div> `
       )
       .join("");
 
